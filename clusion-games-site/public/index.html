@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Clusion Games — 이야기 중심의 게임을 만드는 인디 게임 스튜디오" />
+  <meta name="theme-color" content="#080808" />
+  <meta property="og:title" content="Clusion Games" />
+  <meta property="og:description" content="Stories beyond a single reality." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/REMain.png" />
+  <title>Clusion Games</title>
+  <link rel="icon" href="assets/Logo.png" type="image/png" />
+  <link rel="preload" href="assets/REMain.png" as="image" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#home" aria-label="Clusion Games 홈">
+      <img src="assets/Logo.png" alt="Clusion Games 로고" width="42" height="42" />
+      <span>CLUSION GAMES</span>
+    </a>
+
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+      <span></span><span></span><span></span>
+      <span class="sr-only">메뉴 열기</span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="주 메뉴" data-nav>
+      <a href="#games" data-i18n="navGames">GAMES</a>
+      <a href="#about" data-i18n="navAbout">ABOUT</a>
+      <a href="#news" data-i18n="navNews">NEWS</a>
+      <a href="#contact" data-i18n="navContact">CONTACT</a>
+      <button class="language-button" type="button" data-language-button aria-label="언어 전환">EN</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow" data-i18n="heroEyebrow">INDEPENDENT GAME STUDIO</p>
+        <h1 id="hero-title">
+          <span data-i18n="heroLine1">STORIES BEYOND</span>
+          <strong data-i18n="heroLine2">A SINGLE REALITY.</strong>
+        </h1>
+        <p class="hero-description" data-i18n="heroDescription">
+          Clusion Games는 하나의 현실을 넘어서는 이야기와 선택의 경험을 만드는 1인 게임 스튜디오입니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#games" data-i18n="viewGame">게임 보기</a>
+          <a class="button button-ghost" href="https://store.steampowered.com/app/4128940/" target="_blank" rel="noreferrer" data-i18n="steamWishlist">Steam에서 찜하기</a>
+        </div>
+        <dl class="hero-meta" aria-label="게임 정보">
+          <div><dt data-i18n="genreLabel">장르</dt><dd data-i18n="genreValue">미스터리 · 비주얼 노벨 · 퍼즐</dd></div>
+          <div><dt data-i18n="platformLabel">플랫폼</dt><dd>Windows</dd></div>
+          <div><dt data-i18n="statusLabel">상태</dt><dd data-i18n="statusValue">개발 중</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Red Experience 추상 키아트">
+        <img src="assets/REMain2.png" alt="붉은 조명 아래 끝없이 이어지는 어두운 복도" />
+        <div class="hero-card">
+          <span>PROJECT 01</span>
+          <strong>RED EXPERIENCE</strong>
+          <small data-i18n="heroCardSmall">미스터리 · 탐색 · 비주얼 노벨</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="games" class="games section-shell section-spacing" aria-labelledby="games-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="featuredEyebrow">FEATURED GAME</p>
+        <h2 id="games-title">RED EXPERIENCE</h2>
+      </div>
+
+      <article class="game-feature reveal">
+        <div class="game-image">
+          <img src="assets/REMain.png" alt="Red Experience 대표 이미지" loading="lazy" />
+          <span class="status-badge" data-i18n="statusValue">개발 중</span>
+        </div>
+        <div class="game-copy">
+          <p class="game-lead" data-i18n="gameLead">
+            의문의 공간에서 깨어난 참가자들. 감춰진 진실을 추적하며 탈출하십시오.
+          </p>
+          <p data-i18n="gameBody">
+            《Red Experience》는 대화, 탐색, 퍼즐과 선택을 통해 사건의 전모를 밝혀가는 미스터리 비주얼 노벨입니다. 플레이어의 판단은 관계와 정보, 그리고 이야기의 흐름을 바꿉니다.
+          </p>
+          <ul class="feature-list">
+            <li data-i18n="feature1">선택에 따라 변화하는 분기형 서사</li>
+            <li data-i18n="feature2">공간을 조사하고 단서를 조합하는 탐색</li>
+            <li data-i18n="feature3">기억과 현실의 경계를 다루는 미스터리</li>
+          </ul>
+          <div class="game-actions">
+            <a class="text-link" href="https://store.steampowered.com/app/4128940/" target="_blank" rel="noreferrer">
+              <span data-i18n="steamPage">Steam 페이지</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="about" class="about section-shell section-spacing" aria-labelledby="about-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="aboutEyebrow">ABOUT THE STUDIO</p>
+        <h2 id="about-title" data-i18n="aboutTitle">작지만 선명한 세계를 만듭니다.</h2>
+      </div>
+      <div class="about-grid">
+        <p class="about-lead reveal" data-i18n="aboutLead">
+          Clusion Games는 이야기를 중심으로 한 게임을 개발하는 1인 인디 게임 스튜디오입니다.
+        </p>
+        <div class="about-body reveal">
+          <p data-i18n="aboutBody1">
+            비주얼 노벨 《Red Experience》를 시작으로, 플레이어가 직접 추리하고 선택하며 세계에 개입할 수 있는 작품을 제작하고 있습니다.
+          </p>
+          <p data-i18n="aboutBody2">
+            장르의 경계보다 경험의 밀도를 중요하게 생각하며, 기억에 남는 캐릭터와 설정, 그리고 게임만이 전달할 수 있는 서사를 목표로 합니다.
+          </p>
+        </div>
+      </div>
+      <div class="values reveal" aria-label="스튜디오 핵심 가치">
+        <div><span>01</span><strong data-i18n="value1Title">STORY</strong><p data-i18n="value1Body">이야기와 인물에서 시작합니다.</p></div>
+        <div><span>02</span><strong data-i18n="value2Title">CHOICE</strong><p data-i18n="value2Body">플레이어의 판단을 존중합니다.</p></div>
+        <div><span>03</span><strong data-i18n="value3Title">EXPERIENCE</strong><p data-i18n="value3Body">게임 이후에도 남는 감정을 만듭니다.</p></div>
+      </div>
+    </section>
+
+    <section id="news" class="news section-shell section-spacing" aria-labelledby="news-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">NEWS</p>
+        <h2 id="news-title" data-i18n="newsTitle">개발 소식</h2>
+      </div>
+      <div class="news-list reveal">
+        <article>
+          <time datetime="2026">2026</time>
+          <div>
+            <span class="news-tag">STUDIO</span>
+            <h3 data-i18n="news1Title">Clusion Games 공식 사이트 공개</h3>
+            <p data-i18n="news1Body">게임과 개발 소식을 한곳에서 전해드릴 예정입니다.</p>
+          </div>
+        </article>
+        <article>
+          <time datetime="2026">2026</time>
+          <div>
+            <span class="news-tag">RED EXPERIENCE</span>
+            <h3 data-i18n="news2Title">Red Experience 개발 진행 중</h3>
+            <p data-i18n="news2Body">미스터리 비주얼 노벨의 첫 번째 챕터를 제작하고 있습니다.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-shell section-spacing" aria-labelledby="contact-title">
+      <div class="contact-card reveal">
+        <p class="eyebrow" data-i18n="contactEyebrow">CONTACT</p>
+        <h2 id="contact-title" data-i18n="contactTitle">새로운 현실은<br />한 통의 메시지에서 시작될 수 있습니다.</h2>
+        <p data-i18n="contactBody">게임 버그, 미디어 및 비즈니스 관련 문의를 보내주세요.</p>
+        <a class="button button-primary" href="mailto:hoon4649@gmail.com">hoon4649@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <a class="brand footer-brand" href="#home">
+      <img src="assets/Logo.png" alt="Clusion Games 로고" width="34" height="34" />
+      <span>CLUSION GAMES</span>
+    </a>
+    <p>© <span data-year></span> Clusion Games. All rights reserved.</p>
+    <a href="#home" class="back-to-top" aria-label="페이지 맨 위로">↑</a>
+  </footer>
+</body>
+</html>
