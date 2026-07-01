@@ -156,8 +156,13 @@ button { color: inherit; }
 .contact-card .button { position: relative; z-index: 1; margin-top: 1rem; }
 .contact-card small { display: block; position: relative; z-index: 1; margin-top: .8rem; color: #706c6a; }
 
-.site-footer { min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); color: #777; font-size: .78rem; }
+.site-footer { position: relative; min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); color: #777; font-size: .78rem; }
 .footer-brand { color: white; }
+.footer-right { display: flex; align-items: center; gap: 0.75rem; }
+.footer-socials { display: flex; align-items: center; gap: 0.5rem; }
+.footer-socials a { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line); color: var(--muted); transition: border-color .2s ease, color .2s ease, transform .2s ease; }
+.footer-socials a:hover, .footer-socials a:focus-visible { border-color: var(--red); color: white; transform: translateY(-2px); }
+.footer-socials svg { width: 18px; height: 18px; fill: currentColor; }
 .back-to-top { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line); color: white; }
 
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
@@ -205,7 +210,8 @@ button { color: inherit; }
   .news-list article { grid-template-columns: 1fr; gap: .4rem; }
   .contact { padding-bottom: 88px; }
   .site-footer { align-items: flex-start; flex-direction: column; padding-block: 1.5rem; }
-  .back-to-top { position: absolute; right: 14px; }
+  .footer-right { width: 100%; display: flex; align-items: center; }
+  .back-to-top { position: absolute; right: 14px; bottom: 1.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
