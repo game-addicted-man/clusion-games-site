@@ -21,7 +21,7 @@ const translations = {
     aboutBody2: '장르의 경계보다 경험의 밀도를 중요하게 생각하며, 기억에 남는 캐릭터와 설정, 그리고 게임만이 전달할 수 있는 서사를 목표로 합니다.',
     value1Title: 'STORY', value1Body: '이야기와 인물에서 시작합니다.', value2Title: 'CHOICE', value2Body: '플레이어의 판단을 존중합니다.', value3Title: 'EXPERIENCE', value3Body: '게임 이후에도 남는 감정을 만듭니다.',
     photosEyebrow: 'PHOTOS', photosTitle: '사진으로 남긴 순간들',
-    newsTitle: '개발 소식', newsBicTitle: 'BIC 2026 루키부문 선정', newsBicBody: '《Red Experience》가 BIC 2026 루키부문 선정작에 이름을 올렸습니다.', newsBicLink: 'BIC 공식 사이트', news1Title: 'Clusion Games 공식 사이트 공개', news1Body: '게임과 개발 소식을 한곳에서 전해드릴 예정입니다.', news2Title: 'Red Experience 개발 진행 중', news2Body: '미스터리 비주얼 노벨을 2026년 말 출시 목표로 개발중입니다.',
+    newsTitle: '개발 소식', newsDemoTitle: 'Red Experience 데모 공개', newsDemoBody: '《Red Experience》의 데모를 Steam에서 공개했습니다.', newsDemoLink: 'Steam에서 데모 플레이', newsBicTitle: 'BIC 2026 루키부문 선정', newsBicBody: '《Red Experience》가 BIC 2026 루키부문 선정작에 이름을 올렸습니다.', newsBicLink: 'BIC 공식 사이트', news1Title: 'Clusion Games 공식 사이트 공개', news1Body: '게임과 개발 소식을 한곳에서 전해드릴 예정입니다.', news2Title: 'Red Experience 개발 진행 중', news2Body: '미스터리 비주얼 노벨을 2027년 초 출시 목표로 개발 중입니다.',
     contactEyebrow: 'CONTACT', contactTitle: '새로운 현실은<br />한 통의 메시지에서 시작될 수 있습니다.', contactBody: '게임, 버그, 미디어 및 비즈니스 관련 문의를 보내주세요.', contactNote: ''
   },
   en: {
@@ -41,7 +41,7 @@ const translations = {
     aboutBody2: 'Rather than staying within one genre, Clusion Games focuses on dense, memorable experiences built from characters, settings, and stories only games can tell.',
     value1Title: 'STORY', value1Body: 'Every project begins with story and character.', value2Title: 'CHOICE', value2Body: 'Player decisions deserve meaningful consequences.', value3Title: 'EXPERIENCE', value3Body: 'We create emotions that remain after the game ends.',
     photosEyebrow: 'PHOTOS', photosTitle: 'Moments in pictures',
-    newsTitle: 'DEVELOPMENT NEWS', newsBicTitle: 'Selected for the BIC 2026 Rookie Division', newsBicBody: '《Red Experience》 has been selected for the BIC 2026 Rookie Division.', newsBicLink: 'BIC OFFICIAL WEBSITE', news1Title: 'Clusion Games official website launched', news1Body: 'Game information and development news will be shared here.', news2Title: 'Red Experience is in development', news2Body: 'A mystery visual novel is currently in development, with a targeted release in late 2026.',
+    newsTitle: 'DEVELOPMENT NEWS', newsDemoTitle: 'Red Experience demo released', newsDemoBody: 'The 《Red Experience》 demo is now available on Steam.', newsDemoLink: 'PLAY THE DEMO ON STEAM', newsBicTitle: 'Selected for the BIC 2026 Rookie Division', newsBicBody: '《Red Experience》 has been selected for the BIC 2026 Rookie Division.', newsBicLink: 'BIC OFFICIAL WEBSITE', news1Title: 'Clusion Games official website launched', news1Body: 'Game information and development news will be shared here.', news2Title: 'Red Experience is in development', news2Body: 'A mystery visual novel is currently in development, with a targeted release in early 2027.',
     contactEyebrow: 'CONTACT', contactTitle: 'A new reality can begin<br />with a single message.', contactBody: 'For game, bugs, media, and business inquiries, please get in touch.', contactNote: ''
   }
 };
