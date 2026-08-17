@@ -37,6 +37,15 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
 }
+html[lang="ja"] body {
+  font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", Pretendard, sans-serif;
+}
+html[lang="zh-Hans"] body {
+  font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", Pretendard, sans-serif;
+}
+html[lang="zh-Hant"] body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", Pretendard, sans-serif;
+}
 body.menu-open { overflow: hidden; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
@@ -73,11 +82,13 @@ button { color: inherit; }
 .site-nav { display: flex; align-items: center; gap: 2rem; }
 .site-nav a { color: var(--muted); font-size: .75rem; letter-spacing: .16em; font-weight: 750; transition: color .2s; }
 .site-nav a:hover, .site-nav a:focus-visible { color: white; }
-.language-button {
-  border: 1px solid var(--line); background: transparent; border-radius: 999px; min-width: 42px; height: 30px;
+.language-select {
+  min-width: 104px; height: 32px; padding-inline: .65rem; color: var(--text); color-scheme: dark;
+  border: 1px solid var(--line); background: var(--bg-soft); border-radius: 999px;
   cursor: pointer; font-size: .72rem; font-weight: 800; transition: border-color .2s, background .2s;
 }
-.language-button:hover { border-color: var(--red); background: rgba(216,25,50,.12); }
+.language-select:hover, .language-select:focus-visible { border-color: var(--red); background: rgba(216,25,50,.12); }
+.language-select option { color: var(--text); background: var(--panel); }
 .menu-button { display: none; background: transparent; border: 0; width: 42px; height: 42px; padding: 10px; cursor: pointer; }
 .menu-button > span:not(.sr-only) { display: block; height: 1px; background: white; margin: 6px 0; transition: transform .2s, opacity .2s; }
 
@@ -193,7 +204,7 @@ button { color: inherit; }
   }
   .site-nav.open { transform: none; }
   .site-nav a { font-size: clamp(1.9rem, 8vw, 3.6rem); color: white; letter-spacing: -.025em; }
-  .site-nav .language-button { margin-top: 1rem; }
+  .site-nav .language-select { min-width: 132px; height: 42px; margin-top: 1rem; font-size: .9rem; }
   .menu-button[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .menu-button[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-button[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }

@@ -1,7 +1,7 @@
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('[data-menu-button]');
 const nav = document.querySelector('[data-nav]');
-const languageButton = document.querySelector('[data-language-button]');
+const languageSelect = document.querySelector('[data-language-select]');
 
 const translations = {
   ko: {
@@ -21,7 +21,7 @@ const translations = {
     aboutBody2: '장르의 경계보다 경험의 밀도를 중요하게 생각하며, 기억에 남는 캐릭터와 설정, 그리고 게임만이 전달할 수 있는 서사를 목표로 합니다.',
     value1Title: 'STORY', value1Body: '이야기와 인물에서 시작합니다.', value2Title: 'CHOICE', value2Body: '플레이어의 판단을 존중합니다.', value3Title: 'EXPERIENCE', value3Body: '게임 이후에도 남는 감정을 만듭니다.',
     photosEyebrow: 'PHOTOS', photosTitle: '사진으로 남긴 순간들',
-    newsTitle: '개발 소식', newsDemoTitle: 'Red Experience 데모 공개', newsDemoBody: '《Red Experience》의 데모를 Steam에서 공개했습니다.', newsDemoLink: 'Steam에서 데모 플레이', newsBicTitle: 'BIC 2026 루키부문 선정', newsBicBody: '《Red Experience》가 BIC 2026 루키부문 선정작에 이름을 올렸습니다.', newsBicLink: 'BIC 공식 사이트', news1Title: 'Clusion Games 공식 사이트 공개', news1Body: '게임과 개발 소식을 한곳에서 전해드릴 예정입니다.', news2Title: 'Red Experience 개발 진행 중', news2Body: '미스터리 비주얼 노벨을 2027년 초 출시 목표로 개발 중입니다.',
+    newsTitle: '개발 소식', newsBicOfflineTitle: 'BIC 2026 오프라인 전시 참가', newsBicOfflineBody: '《Red Experience》가 BIC 2026 오프라인 전시에 참가했습니다.', newsDemoTitle: 'Red Experience 데모 공개', newsDemoBody: '《Red Experience》의 데모를 Steam에서 공개했습니다.', newsDemoLink: 'Steam에서 데모 플레이', newsBicTitle: 'BIC 2026 루키부문 선정', newsBicBody: '《Red Experience》가 BIC 2026 루키부문 선정작에 이름을 올렸습니다.', newsBicLink: 'BIC 공식 사이트', news1Title: 'Clusion Games 공식 사이트 공개', news1Body: '게임과 개발 소식을 한곳에서 전해드릴 예정입니다.', news2Title: 'Red Experience 개발 진행 중', news2Body: '미스터리 비주얼 노벨을 2027년 초 출시 목표로 개발 중입니다.',
     contactEyebrow: 'CONTACT', contactTitle: '새로운 현실은<br />한 통의 메시지에서 시작될 수 있습니다.', contactBody: '게임, 버그, 미디어 및 비즈니스 관련 문의를 보내주세요.', contactNote: ''
   },
   en: {
@@ -41,23 +41,112 @@ const translations = {
     aboutBody2: 'Rather than staying within one genre, Clusion Games focuses on dense, memorable experiences built from characters, settings, and stories only games can tell.',
     value1Title: 'STORY', value1Body: 'Every project begins with story and character.', value2Title: 'CHOICE', value2Body: 'Player decisions deserve meaningful consequences.', value3Title: 'EXPERIENCE', value3Body: 'We create emotions that remain after the game ends.',
     photosEyebrow: 'PHOTOS', photosTitle: 'Moments in pictures',
-    newsTitle: 'DEVELOPMENT NEWS', newsDemoTitle: 'Red Experience demo released', newsDemoBody: 'The 《Red Experience》 demo is now available on Steam.', newsDemoLink: 'PLAY THE DEMO ON STEAM', newsBicTitle: 'Selected for the BIC 2026 Rookie Division', newsBicBody: '《Red Experience》 has been selected for the BIC 2026 Rookie Division.', newsBicLink: 'BIC OFFICIAL WEBSITE', news1Title: 'Clusion Games official website launched', news1Body: 'Game information and development news will be shared here.', news2Title: 'Red Experience is in development', news2Body: 'A mystery visual novel is currently in development, with a targeted release in early 2027.',
+    newsTitle: 'DEVELOPMENT NEWS', newsBicOfflineTitle: 'Exhibited at BIC 2026', newsBicOfflineBody: '《Red Experience》 was showcased at the BIC 2026 offline exhibition.', newsDemoTitle: 'Red Experience demo released', newsDemoBody: 'The 《Red Experience》 demo is now available on Steam.', newsDemoLink: 'PLAY THE DEMO ON STEAM', newsBicTitle: 'Selected for the BIC 2026 Rookie Division', newsBicBody: '《Red Experience》 has been selected for the BIC 2026 Rookie Division.', newsBicLink: 'BIC OFFICIAL WEBSITE', news1Title: 'Clusion Games official website launched', news1Body: 'Game information and development news will be shared here.', news2Title: 'Red Experience is in development', news2Body: 'A mystery visual novel is currently in development, with a targeted release in early 2027.',
     contactEyebrow: 'CONTACT', contactTitle: 'A new reality can begin<br />with a single message.', contactBody: 'For game, bugs, media, and business inquiries, please get in touch.', contactNote: ''
+  },
+  ja: {
+    navGames: 'GAMES', navAbout: 'ABOUT', navPhotos: 'PHOTOS', navNews: 'NEWS', navContact: 'CONTACT',
+    heroEyebrow: 'INDEPENDENT GAME STUDIO',
+    heroLine1: 'STORIES BEYOND', heroLine2: 'A SINGLE REALITY.',
+    heroDescription: 'Clusion Gamesは、一つの現実を越える物語と、選択によって生まれる体験を届ける個人ゲームスタジオです。',
+    viewGame: 'ゲームを見る', steamWishlist: 'Steamでウィッシュリストに追加',
+    genreLabel: 'ジャンル', genreValue: 'ミステリー・ビジュアルノベル・パズル', platformLabel: 'プラットフォーム', statusLabel: '開発状況', statusValue: '開発中',
+    heroCardSmall: 'ミステリー・探索・ビジュアルノベル', featuredEyebrow: 'FEATURED GAME',
+    gameLead: '正体不明の空間で目を覚ましたホン・スヨン。ほかの参加者たちを警戒しながら、誘拐事件の真相を突き止めなければなりません。',
+    gameBody: '『Red Experience』は、探索や会話、パズルを通じて、謎の実験と参加者たちの過去を追うミステリービジュアルノベルです。集めた手がかりとプレイヤーの選択が、新たな情報を解き明かし、物語を分岐させていきます。',
+    feature1: '選択によって変化する分岐型ストーリー', feature2: '空間を調査し、手がかりを組み合わせる探索', feature3: '閉ざされた空間で起こるミステリー', steamPage: 'Steamページ',
+    aboutEyebrow: 'ABOUT THE STUDIO', aboutTitle: '小さくても、鮮やかな世界をつくります。',
+    aboutLead: 'Clusion Gamesは、物語を軸にしたゲームを開発する個人インディーゲームスタジオです。',
+    aboutBody1: 'ビジュアルノベル『Red Experience』を皮切りに、プレイヤー自身が推理し、選択し、世界に介入できる作品を制作しています。',
+    aboutBody2: 'ジャンルの枠にとらわれるよりも、体験の密度を大切にしています。記憶に残るキャラクターと世界観、そしてゲームだからこそ伝えられる物語を目指します。',
+    value1Title: 'STORY', value1Body: '物語と登場人物から始めます。', value2Title: 'CHOICE', value2Body: 'プレイヤーの判断を尊重します。', value3Title: 'EXPERIENCE', value3Body: 'ゲームを終えた後も心に残る感情を生み出します。',
+    photosEyebrow: 'PHOTOS', photosTitle: '写真に残した瞬間',
+    newsTitle: '開発ニュース', newsBicOfflineTitle: 'BIC 2026 オフライン展示に出展', newsBicOfflineBody: '『Red Experience』をBIC 2026のオフライン展示に出展しました。', newsDemoTitle: 'Red Experience 体験版公開', newsDemoBody: '『Red Experience』の体験版をSteamで公開しました。', newsDemoLink: 'Steamで体験版をプレイ', newsBicTitle: 'BIC 2026 ルーキー部門に選出', newsBicBody: '『Red Experience』がBIC 2026のルーキー部門に選出されました。', newsBicLink: 'BIC公式サイト', news1Title: 'Clusion Games公式サイト公開', news1Body: 'ゲーム情報や開発ニュースをこちらでお届けします。', news2Title: 'Red Experience 開発中', news2Body: '2027年初頭のリリースを目標に、ミステリービジュアルノベルを開発中です。',
+    contactEyebrow: 'CONTACT', contactTitle: '新たな現実は<br />一通のメッセージから始まるかもしれません。', contactBody: 'ゲーム、不具合、メディア、ビジネスに関するお問い合わせをお寄せください。', contactNote: ''
+  },
+  zh: {
+    navGames: 'GAMES', navAbout: 'ABOUT', navPhotos: 'PHOTOS', navNews: 'NEWS', navContact: 'CONTACT',
+    heroEyebrow: 'INDEPENDENT GAME STUDIO',
+    heroLine1: 'STORIES BEYOND', heroLine2: 'A SINGLE REALITY.',
+    heroDescription: 'Clusion Games 是一家由个人运营的游戏工作室，致力于打造超越单一现实的故事，以及由选择带来的独特体验。',
+    viewGame: '查看游戏', steamWishlist: '在 Steam 上加入愿望单',
+    genreLabel: '类型', genreValue: '悬疑 · 视觉小说 · 解谜', platformLabel: '平台', statusLabel: '开发状态', statusValue: '开发中',
+    heroCardSmall: '悬疑 · 探索 · 视觉小说', featuredEyebrow: 'FEATURED GAME',
+    gameLead: '在未知空间中醒来的 Hong Suyeon，必须一边提防其他参与者，一边揭开绑架事件的真相。',
+    gameBody: '《Red Experience》是一款悬疑视觉小说。玩家将通过探索、对话和解谜，追查神秘实验与参与者们的过去。收集到的线索和玩家的选择将解锁新的信息，并让故事走向不同分支。',
+    feature1: '随选择而变化的分支叙事', feature2: '调查空间并组合线索的探索', feature3: '发生在封闭空间中的悬疑事件', steamPage: 'Steam 页面',
+    aboutEyebrow: 'ABOUT THE STUDIO', aboutTitle: '打造虽小却鲜明的世界。',
+    aboutLead: 'Clusion Games 是一家由个人运营、专注于剧情驱动游戏的独立游戏工作室。',
+    aboutBody1: '从视觉小说《Red Experience》开始，我们一直在创作让玩家亲自推理、做出选择并介入世界的作品。',
+    aboutBody2: '比起类型的界限，我们更重视体验的密度，并以塑造令人难忘的角色和设定，以及只有游戏才能传达的叙事为目标。',
+    value1Title: 'STORY', value1Body: '一切始于故事和角色。', value2Title: 'CHOICE', value2Body: '尊重玩家的判断。', value3Title: 'EXPERIENCE', value3Body: '创造在游戏结束后仍萦绕心间的情感。',
+    photosEyebrow: 'PHOTOS', photosTitle: '定格于照片中的瞬间',
+    newsTitle: '开发动态', newsBicOfflineTitle: '参展 BIC 2026 线下展览', newsBicOfflineBody: '《Red Experience》参加了 BIC 2026 线下展览。', newsDemoTitle: 'Red Experience 试玩版发布', newsDemoBody: '《Red Experience》试玩版现已在 Steam 上发布。', newsDemoLink: '在 Steam 上体验试玩版', newsBicTitle: '入选 BIC 2026 新秀组', newsBicBody: '《Red Experience》已入选 BIC 2026 新秀组。', newsBicLink: 'BIC 官方网站', news1Title: 'Clusion Games 官方网站上线', news1Body: '我们将在这里发布游戏资讯和开发动态。', news2Title: 'Red Experience 开发中', news2Body: '这款悬疑视觉小说正在开发中，计划于 2027 年初发布。',
+    contactEyebrow: 'CONTACT', contactTitle: '新的现实<br />或许会从一封邮件开始。', contactBody: '如需咨询游戏、错误反馈、媒体或商务相关事宜，欢迎联系我们。', contactNote: ''
+  },
+  zhHant: {
+    navGames: 'GAMES', navAbout: 'ABOUT', navPhotos: 'PHOTOS', navNews: 'NEWS', navContact: 'CONTACT',
+    heroEyebrow: 'INDEPENDENT GAME STUDIO',
+    heroLine1: 'STORIES BEYOND', heroLine2: 'A SINGLE REALITY.',
+    heroDescription: 'Clusion Games 是一家由個人營運的遊戲工作室，致力於打造超越單一現實的故事，以及由選擇帶來的獨特體驗。',
+    viewGame: '查看遊戲', steamWishlist: '在 Steam 上加入願望清單',
+    genreLabel: '類型', genreValue: '懸疑 · 視覺小說 · 解謎', platformLabel: '平台', statusLabel: '開發狀態', statusValue: '開發中',
+    heroCardSmall: '懸疑 · 探索 · 視覺小說', featuredEyebrow: 'FEATURED GAME',
+    gameLead: '在未知空間中醒來的 Hong Suyeon，必須一邊提防其他參與者，一邊揭開綁架事件的真相。',
+    gameBody: '《Red Experience》是一款懸疑視覺小說。玩家將透過探索、對話和解謎，追查神祕實驗與參與者們的過去。收集到的線索和玩家的選擇將解鎖新的資訊，並讓故事走向不同分支。',
+    feature1: '隨選擇而變化的分支敘事', feature2: '調查空間並組合線索的探索', feature3: '發生在封閉空間中的懸疑事件', steamPage: 'Steam 頁面',
+    aboutEyebrow: 'ABOUT THE STUDIO', aboutTitle: '打造雖小卻鮮明的世界。',
+    aboutLead: 'Clusion Games 是一家由個人營運、專注於劇情驅動遊戲的獨立遊戲工作室。',
+    aboutBody1: '從視覺小說《Red Experience》開始，我們持續創作能讓玩家親自推理、做出選擇並介入世界的作品。',
+    aboutBody2: '比起類型的界線，我們更重視體驗的密度，並以塑造令人難忘的角色和設定，以及只有遊戲才能傳達的敘事為目標。',
+    value1Title: 'STORY', value1Body: '一切始於故事和角色。', value2Title: 'CHOICE', value2Body: '尊重玩家的判斷。', value3Title: 'EXPERIENCE', value3Body: '創造在遊戲結束後仍縈繞心中的情感。',
+    photosEyebrow: 'PHOTOS', photosTitle: '定格於照片中的瞬間',
+    newsTitle: '開發動態', newsBicOfflineTitle: '參展 BIC 2026 線下展覽', newsBicOfflineBody: '《Red Experience》參加了 BIC 2026 線下展覽。', newsDemoTitle: 'Red Experience 試玩版發布', newsDemoBody: '《Red Experience》試玩版現已在 Steam 上發布。', newsDemoLink: '在 Steam 上體驗試玩版', newsBicTitle: '入選 BIC 2026 新秀組', newsBicBody: '《Red Experience》已入選 BIC 2026 新秀組。', newsBicLink: 'BIC 官方網站', news1Title: 'Clusion Games 官方網站上線', news1Body: '我們將在這裡發布遊戲資訊和開發動態。', news2Title: 'Red Experience 開發中', news2Body: '這款懸疑視覺小說正在開發中，預計於 2027 年初推出。',
+    contactEyebrow: 'CONTACT', contactTitle: '新的現實<br />或許會從一封郵件開始。', contactBody: '如需洽詢遊戲、錯誤回報、媒體或商務相關事宜，歡迎與我們聯絡。', contactNote: ''
   }
 };
 
-let currentLanguage = localStorage.getItem('clusion-language') || 'ko';
+const languageSettings = {
+  ko: { htmlLang: 'ko', ariaLabel: '언어 선택' },
+  en: { htmlLang: 'en', ariaLabel: 'Select language' },
+  ja: { htmlLang: 'ja', ariaLabel: '言語を選択' },
+  zh: { htmlLang: 'zh-Hans', ariaLabel: '选择语言' },
+  zhHant: { htmlLang: 'zh-Hant', ariaLabel: '選擇語言' }
+};
 
-function setLanguage(language) {
-  currentLanguage = language;
-  document.documentElement.lang = language;
+const languageStorageKey = 'clusion-language-preference';
+
+function getSystemLanguage() {
+  const preferredLanguages = navigator.languages?.length ? navigator.languages : [navigator.language];
+
+  for (const language of preferredLanguages) {
+    const languageParts = language?.toLowerCase().split('-');
+    const baseLanguage = languageParts?.[0];
+
+    if (baseLanguage === 'zh') {
+      const usesTraditionalChinese = ['hant', 'tw', 'hk', 'mo'].some((part) => languageParts.includes(part));
+      return usesTraditionalChinese ? 'zhHant' : 'zh';
+    }
+
+    if (Object.hasOwn(languageSettings, baseLanguage)) return baseLanguage;
+  }
+
+  return 'en';
+}
+
+const savedLanguage = localStorage.getItem(languageStorageKey);
+const initialLanguage = Object.hasOwn(languageSettings, savedLanguage) ? savedLanguage : getSystemLanguage();
+
+function setLanguage(language, persist = false) {
+  if (!Object.hasOwn(languageSettings, language)) language = 'ko';
+  document.documentElement.lang = languageSettings[language].htmlLang;
   document.querySelectorAll('[data-i18n]').forEach((element) => {
     const key = element.dataset.i18n;
     if (translations[language][key]) element.innerHTML = translations[language][key];
   });
-  languageButton.textContent = language === 'ko' ? 'EN' : 'KR';
-  languageButton.setAttribute('aria-label', language === 'ko' ? '영어로 전환' : 'Switch to Korean');
-  localStorage.setItem('clusion-language', language);
+  languageSelect.value = language;
+  languageSelect.setAttribute('aria-label', languageSettings[language].ariaLabel);
+  if (persist) localStorage.setItem(languageStorageKey, language);
 }
 
 function closeMenu() {
@@ -74,7 +163,7 @@ menuButton.addEventListener('click', () => {
 });
 
 nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-languageButton.addEventListener('click', () => setLanguage(currentLanguage === 'ko' ? 'en' : 'ko'));
+languageSelect.addEventListener('change', (event) => setLanguage(event.target.value, true));
 window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -88,4 +177,4 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
-setLanguage(currentLanguage);
+setLanguage(initialLanguage);
