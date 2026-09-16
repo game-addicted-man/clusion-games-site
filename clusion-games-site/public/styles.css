@@ -128,17 +128,13 @@ button { color: inherit; }
 .feature-list li::before { content: ""; position: absolute; left: 0; top: 1.55rem; width: 7px; height: 7px; background: var(--red); }
 .text-link { display: inline-flex; gap: .6rem; color: white; font-weight: 800; border-bottom: 1px solid var(--red); padding-bottom: .3rem; }
 
-.coming-soon { border-top: 1px solid var(--line); }
-.coming-soon-card { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 520px; background: linear-gradient(135deg, #15100d, #0e0e0f 68%); border: 1px solid rgba(216,25,50,.28); overflow: hidden; }
-.coming-soon-image { position: relative; min-height: 520px; overflow: hidden; }
-.coming-soon-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 35%, rgba(8,8,8,.55)); pointer-events: none; }
-.coming-soon-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
-.coming-soon-card:hover .coming-soon-image img { transform: scale(1.025); }
-.coming-soon-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 5vw, 5rem); }
-.coming-soon-copy h2 { margin: .6rem 0 1.2rem; font-size: clamp(2.5rem, 5vw, 5.2rem); line-height: .98; letter-spacing: -.06em; }
-.coming-soon-copy > p:not(.eyebrow) { color: var(--muted); }
-.coming-soon-copy .coming-soon-lead { color: white; font-size: clamp(1.25rem, 2.2vw, 1.8rem); line-height: 1.45; font-weight: 700; }
-.coming-soon-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); color: #8c8784; font-size: .72rem; letter-spacing: .08em; }
+.orange-wiki-section { border-top: 1px solid var(--line); }
+.orange-wiki-feature { border-color: rgba(222, 113, 28, .42); background: linear-gradient(135deg, #17100b, #111113 68%); }
+.orange-wiki-feature .game-image { background: #090502; }
+.orange-wiki-feature .game-image::after { background: linear-gradient(90deg, transparent 58%, rgba(7, 4, 2, .42)); }
+.orange-wiki-feature .game-image img { object-fit: contain; }
+.orange-status { background: #d76719; }
+.orange-feature-list li::before { background: #e17525; }
 
 .about { border-top: 1px solid var(--line); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 8vw, 8rem); }
@@ -173,9 +169,13 @@ button { color: inherit; }
 .news-list .date-year { font-size: .72rem; letter-spacing: .12em; }
 .news-list .date-day { margin-top: .2rem; color: #aaa; font-size: 1.15rem; font-weight: 700; letter-spacing: .04em; }
 .news-tag { color: var(--red-bright); font-size: .66rem; letter-spacing: .15em; font-weight: 800; }
+.orange-news-tag { color: #f18a3a; }
 .news-list h3 { margin: .45rem 0 .35rem; font-size: clamp(1.2rem, 2vw, 1.6rem); }
 .news-list p { margin: 0; color: var(--muted); }
 .news-list .text-link { margin-top: .8rem; font-size: .8rem; }
+.news-list article.news-with-image { grid-template-columns: 130px minmax(0, 1fr) 150px; align-items: center; }
+.news-image { width: 150px; aspect-ratio: 5 / 6; margin: 0; overflow: hidden; background: #090502; border: 1px solid rgba(222, 113, 28, .35); }
+.news-image img { width: 100%; height: 100%; object-fit: cover; }
 
 .contact { padding-bottom: 132px; }
 .contact-card { position: relative; overflow: hidden; padding: clamp(2rem, 7vw, 6rem); background: linear-gradient(135deg, #1b0a0e, #0c0c0d 65%); border: 1px solid rgba(216,25,50,.35); }
@@ -214,8 +214,8 @@ button { color: inherit; }
   .section-heading { grid-template-columns: 1fr; }
   .game-feature { grid-template-columns: 1fr; }
   .game-image { min-height: 460px; }
-  .coming-soon-card { grid-template-columns: 1fr; }
-  .coming-soon-image { min-height: 400px; }
+  .news-list article.news-with-image { grid-template-columns: 110px minmax(0, 1fr) 130px; }
+  .news-image { width: 130px; }
   .about-grid { grid-template-columns: 1fr; }
 }
 
@@ -233,16 +233,15 @@ button { color: inherit; }
   .hero-meta div { display: grid; grid-template-columns: 72px 1fr; }
   .hero-card { left: 1rem; bottom: 1rem; }
   .game-image { min-height: 360px; }
-  .coming-soon-image { min-height: 280px; }
   .game-copy { padding: 1.5rem; }
-  .coming-soon-copy { padding: 1.5rem; }
-  .coming-soon-meta { flex-direction: column; }
   .values { grid-template-columns: 1fr; }
   .values > div { min-height: 170px; border-right: 0; border-bottom: 1px solid var(--line); }
   .values > div:last-child { border-bottom: 0; }
   .values strong { margin-top: 1.6rem; }
   .photo-grid { grid-template-columns: 1fr; }
   .news-list article { grid-template-columns: 1fr; gap: .4rem; }
+  .news-list article.news-with-image { grid-template-columns: 1fr; gap: 1rem; }
+  .news-image { width: min(220px, 62vw); margin-top: .4rem; }
   .news-list time { flex-direction: row; align-items: baseline; gap: .55rem; }
   .news-list .date-day { margin-top: 0; font-size: .95rem; }
   .contact { padding-bottom: 88px; }
