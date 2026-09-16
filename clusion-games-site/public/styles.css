@@ -70,14 +70,15 @@ button { color: inherit; }
 .site-header.scrolled { background: rgba(7,7,7,.84); backdrop-filter: blur(18px); border-color: var(--line); }
 .brand { display: inline-flex; align-items: center; gap: .7rem; font-size: .85rem; font-weight: 800; letter-spacing: .16em; }
 .brand img { flex: 0 0 auto; }
-.site-nav { display: flex; align-items: center; gap: 2rem; }
+.site-nav { display: flex; align-items: center; gap: clamp(.8rem, 1.5vw, 2rem); }
 .site-nav a { color: var(--muted); font-size: .75rem; letter-spacing: .16em; font-weight: 750; transition: color .2s; }
 .site-nav a:hover, .site-nav a:focus-visible { color: white; }
-.language-button {
-  border: 1px solid var(--line); background: transparent; border-radius: 999px; min-width: 42px; height: 30px;
-  cursor: pointer; font-size: .72rem; font-weight: 800; transition: border-color .2s, background .2s;
+.language-select {
+  border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 999px;
+  min-height: 36px; max-width: 128px; padding: .3rem .5rem; cursor: pointer; font-size: .75rem;
+  color-scheme: dark; transition: border-color .2s, background .2s;
 }
-.language-button:hover { border-color: var(--red); background: rgba(216,25,50,.12); }
+.language-select:hover, .language-select:focus-visible { border-color: var(--red-bright); }
 .menu-button { display: none; background: transparent; border: 0; width: 42px; height: 42px; padding: 10px; cursor: pointer; }
 .menu-button > span:not(.sr-only) { display: block; height: 1px; background: white; margin: 6px 0; transition: transform .2s, opacity .2s; }
 
@@ -85,9 +86,11 @@ button { color: inherit; }
   min-height: 100svh; display: grid; grid-template-columns: minmax(0, .92fr) minmax(390px, 1.08fr);
   gap: clamp(3rem, 7vw, 7rem); align-items: center; padding-top: calc(var(--header-height) + 44px); padding-bottom: 70px;
 }
+.hero-copy { min-width: 0; }
 .eyebrow { margin: 0 0 1.2rem; color: var(--red-bright); font-size: .72rem; font-weight: 850; letter-spacing: .2em; }
-.hero h1 { margin: 0; font-size: clamp(3.6rem, 7.4vw, 7.1rem); line-height: .88; letter-spacing: -.07em; font-weight: 300; }
+.hero h1 { margin: 0; font-size: clamp(3.6rem, 7.4vw, 7.1rem); line-height: .88; letter-spacing: -.07em; font-weight: 300; overflow-wrap: anywhere; }
 .hero h1 strong { display: block; font-weight: 900; }
+html[lang="ru"] .hero h1 { font-size: clamp(2.6rem, 5.4vw, 4.3rem); }
 .hero-description { max-width: 620px; margin: 2rem 0 0; color: #c4c1bf; font-size: clamp(1rem, 1.4vw, 1.15rem); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
 .button {
@@ -208,15 +211,16 @@ button { color: inherit; }
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .menu-button { display: block; z-index: 3; }
   .site-nav {
-    position: fixed; inset: 0; padding: 120px 28px 40px; background: rgba(7,7,7,.98);
-    flex-direction: column; align-items: flex-start; gap: 1.4rem; transform: translateX(100%); transition: transform .25s ease;
+    position: fixed; top: 0; left: 0; right: 0; height: 100dvh; padding: 96px 28px 32px;
+    background: var(--bg); overflow-y: auto;
+    flex-direction: column; align-items: flex-start; gap: 1rem; transform: translateX(100%); transition: transform .25s ease;
   }
   .site-nav.open { transform: none; }
-  .site-nav a { font-size: clamp(1.9rem, 8vw, 3.6rem); color: white; letter-spacing: -.025em; }
-  .site-nav .language-button { margin-top: 1rem; }
+  .site-nav a { font-size: clamp(1.6rem, 7vw, 2.6rem); color: white; letter-spacing: -.025em; }
+  .site-nav .language-select { margin-top: 1rem; width: min(100%, 260px); max-width: none; min-height: 44px; font-size: 1rem; }
   .menu-button[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .menu-button[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-button[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }

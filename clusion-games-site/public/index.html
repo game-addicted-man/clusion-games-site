@@ -37,12 +37,19 @@
       <a href="#orangewiki" data-i18n="navOrangeWiki">ORANGEWIKI</a>
       <a href="#about" data-i18n="navAbout">ABOUT</a>
       <a href="#photos" data-i18n="navPhotos">PHOTOS</a>
-      <a href="#videos">VIDEOS</a>
+      <a href="#videos" data-i18n="navVideos">VIDEOS</a>
       <a href="#news" data-i18n="navNews">NEWS</a>
       <a href="https://masterofnone-jackofalltrades.tistory.com/" target="_blank" rel="noopener noreferrer"
-        aria-label="개발일지 보기 (새 탭)">DEVLOG</a>
+        data-i18n="navDevlog">DEVLOG</a>
       <a href="#contact" data-i18n="navContact">CONTACT</a>
-      <button class="language-button" type="button" data-language-button aria-label="언어 전환">EN</button>
+      <select class="language-select" data-language-select aria-label="언어 선택">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文</option>
+        <option value="ja">日本語</option>
+        <option value="ru">Русский</option>
+      </select>
     </nav>
   </header>
 
@@ -136,7 +143,7 @@
       <article class="game-feature orange-wiki-feature reveal">
         <div class="game-image">
           <img src="assets/orangewiki-vertical-capsule.png" alt="OrangeWiki 로고와 오렌지 크리처 대표 이미지" loading="lazy" />
-          <span class="status-badge orange-status" data-i18n="orangeWikiStatus">IN DEVELOPMENT</span>
+          <span class="status-badge orange-status" data-i18n="orangeWikiStatus">개발 중</span>
         </div>
         <div class="game-copy">
           <p class="game-lead" data-i18n="orangeWikiLead">이름 없는 역에서 시작되는 새로운 미스터리.</p>
@@ -224,7 +231,7 @@
 
     <section id="videos" class="video section-shell section-spacing" aria-labelledby="video-title">
       <div class="section-heading reveal">
-        <p class="eyebrow">VIDEO</p>
+        <p class="eyebrow" data-i18n="videoEyebrow">VIDEO</p>
         <h2 id="video-title">Red Experience</h2>
       </div>
       <div class="video-frame reveal">
@@ -236,7 +243,7 @@
 
     <section id="news" class="news section-shell section-spacing" aria-labelledby="news-title">
       <div class="section-heading reveal">
-        <p class="eyebrow">NEWS</p>
+        <p class="eyebrow" data-i18n="newsEyebrow">NEWS</p>
         <h2 id="news-title" data-i18n="newsTitle">개발 소식</h2>
       </div>
       <div class="news-list reveal">
