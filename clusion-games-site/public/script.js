@@ -5,7 +5,7 @@ const languageButton = document.querySelector('[data-language-button]');
 
 const translations = {
   ko: {
-    navGames: 'GAMES', navAbout: 'ABOUT', navPhotos: 'PHOTOS', navNews: 'NEWS', navContact: 'CONTACT',
+    navGames: 'GAMES', navOrangeWiki: 'ORANGEWIKI', navAbout: 'ABOUT', navPhotos: 'PHOTOS', navNews: 'NEWS', navContact: 'CONTACT',
     heroEyebrow: 'INDEPENDENT GAME STUDIO',
     heroLine1: 'STORIES BEYOND', heroLine2: 'A SINGLE REALITY.',
     heroDescription: 'Clusion Games는 하나의 현실을 넘어서는 이야기와 선택의 경험을 만드는 1인 게임 스튜디오입니다.',
@@ -15,6 +15,9 @@ const translations = {
     gameLead: '정체불명의 공간에서 깨어난 홍수연. 다른 참가자들을 견제하며 납치 사건의 진실을 밝혀내야 합니다.',
     gameBody: '《Red Experience》는 탐색과 대화, 퍼즐을 통해 의문의 실험과 참가자들의 과거를 추적하는 미스터리 비주얼 노벨입니다. 수집한 단서와 플레이어의 선택은 새로운 정보와 이야기의 분기를 만들어냅니다.',
     feature1: '선택에 따라 변화하는 분기형 서사', feature2: '공간을 조사하고 단서를 조합하는 탐색', feature3: '폐쇄된 공간에서 일어나는 미스터리', steamPage: 'Steam 페이지',
+    orangeWikiStatus: '준비중', orangeWikiEyebrow: 'NEXT PROJECT', orangeWikiTitle: 'OrangeWiki 준비중', orangeWikiLead: '이름 없는 역에서 시작되는 새로운 미스터리.',
+    orangeWikiBody: '낯선 지하철역에 홀로 남겨진 뒤, 비어 있는 역명과 멈춰 선 열차의 흔적을 따라가며 이곳에 숨은 이야기를 조사하는 탐색 어드벤처를 준비하고 있습니다.',
+    orangeWikiMeta: '개발 초기 단계 · 세부 정보 공개 예정',
     aboutEyebrow: 'ABOUT THE STUDIO', aboutTitle: '작지만 선명한 세계를 만듭니다.',
     aboutLead: 'Clusion Games는 이야기를 중심으로 한 게임을 개발하는 1인 인디 게임 스튜디오입니다.',
     aboutBody1: '비주얼 노벨 《Red Experience》를 시작으로, 플레이어가 직접 추리하고 선택하며 세계에 개입할 수 있는 작품을 제작하고 있습니다.',
@@ -25,7 +28,7 @@ const translations = {
     contactEyebrow: 'CONTACT', contactTitle: '새로운 현실은<br />한 통의 메시지에서 시작될 수 있습니다.', contactBody: '게임, 버그, 미디어 및 비즈니스 관련 문의를 보내주세요.', contactNote: ''
   },
   en: {
-    navGames: 'GAMES', navAbout: 'ABOUT', navPhotos: 'PHOTOS', navNews: 'NEWS', navContact: 'CONTACT',
+    navGames: 'GAMES', navOrangeWiki: 'ORANGEWIKI', navAbout: 'ABOUT', navPhotos: 'PHOTOS', navNews: 'NEWS', navContact: 'CONTACT',
     heroEyebrow: 'INDEPENDENT GAME STUDIO',
     heroLine1: 'STORIES BEYOND', heroLine2: 'A SINGLE REALITY.',
     heroDescription: 'Clusion Games is a solo independent studio creating story-driven games built around choice, mystery, and realities beyond the ordinary.',
@@ -35,6 +38,9 @@ const translations = {
     gameLead: 'Awakening in a mysterious space, Hong Suyeon must uncover the truth behind the kidnapping while keeping the other participants in check.',
     gameBody: '《Red Experience》 is a mystery visual novel where you trace an enigmatic experiment and the participants\' pasts through exploration, dialogue, and puzzles. The clues you collect and the choices you make will unlock new information and create branching storylines.',
     feature1: 'A branching narrative shaped by player choices', feature2: 'Environmental investigation and clue deduction', feature3: 'A mystery set in a confined space', steamPage: 'STEAM PAGE',
+    orangeWikiStatus: 'IN PREPARATION', orangeWikiEyebrow: 'NEXT PROJECT', orangeWikiTitle: 'OrangeWiki — In Preparation', orangeWikiLead: 'A new mystery begins at a station without a name.',
+    orangeWikiBody: 'An exploration adventure is in preparation: left alone in an unfamiliar subway station, you follow the traces of a blank station name and a train that never arrives to uncover what happened here.',
+    orangeWikiMeta: 'Early development · More details coming soon',
     aboutEyebrow: 'ABOUT THE STUDIO', aboutTitle: 'Small studio. Distinct worlds.',
     aboutLead: 'Clusion Games is a solo independent studio focused on story-driven games.',
     aboutBody1: 'Beginning with the visual novel Red Experience, the studio creates games where players investigate, make choices, and actively intervene in the world.',
