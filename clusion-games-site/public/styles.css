@@ -148,7 +148,7 @@ html[lang="ru"] .hero h1 { font-size: clamp(2.6rem, 5.4vw, 4.3rem); }
 .yellow-terminal-feature .game-image { display: flex; align-items: center; min-height: 0; background: #051b4d; }
 .yellow-terminal-feature .game-image::after { display: none; }
 .yellow-terminal-feature .game-image img { height: auto; object-fit: contain; }
-.yellow-status { position: static; display: inline-block; background: #f2d447; color: #19170a; }
+.yellow-status { background: #f2d447; color: #19170a; }
 .yellow-feature-list li::before { background: #f2d447; }
 .yellow-trailer-title { color: #f2d447; }
 .red-trailer-title { color: var(--red-bright); }
