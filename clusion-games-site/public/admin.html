@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>관리자 · Clusion Games</title>
+  <link rel="icon" href="assets/Logo.png" type="image/png" />
+  <link rel="stylesheet" href="admin.css" />
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#overview">통계로 건너뛰기</a>
+  <aside class="sidebar" aria-label="관리자 메뉴">
+    <a class="brand" href="admin.html"><img src="assets/Logo.png" width="36" height="36" alt="" /><span>CLUSION GAMES<small>STUDIO ADMIN</small></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="admin-navigation" type="button">메뉴</button>
+    <div class="sidebar-content" id="admin-navigation">
+      <p class="nav-label">WORKSPACE</p>
+      <nav>
+        <a class="active" href="#overview" aria-current="location"><span aria-hidden="true">◫</span> 대시보드</a>
+        <a href="#games"><span aria-hidden="true">▤</span> 게임별 통계</a>
+        <a href="#audience"><span aria-hidden="true">↗</span> 방문자 분석</a>
+        <a href="#connections"><span aria-hidden="true">⚙</span> 연결 설정</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a class="site-link" href="index.html" target="_blank" rel="noopener noreferrer">공개 사이트 보기 <span>↗</span></a>
+        <div class="owner"><span class="avatar" aria-hidden="true">CG</span><div><strong>스튜디오 관리자</strong><small>본인 계정 연결 예정</small></div><span class="status-dot" aria-hidden="true"></span></div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar"><span>WORKSPACE <span class="slash">/</span> 통계</span><span class="connection-status"><i aria-hidden="true"></i> 데이터 미연결</span></header>
+    <section id="overview" class="overview">
+      <div class="page-heading"><div><p class="eyebrow">STUDIO OVERVIEW</p><h1>사이트의 흐름을 한눈에.</h1><p class="subtitle">방문부터 게임에 대한 관심까지, Clusion Games 통계 대시보드</p></div><a class="subtle-button" href="#connections">연결 설정 <span aria-hidden="true">↗</span></a></div>
+      <div class="preview-notice"><span class="notice-icon" aria-hidden="true">i</span><p><strong>관리자 화면 미리보기</strong> 인증과 통계 수집은 아직 연결되지 않았습니다. 본인 계정 접근 제한은 인증 서비스 연결 후 적용됩니다.</p></div>
+      <div class="toolbar">
+        <div class="period-control"><label for="period">조회 기간</label><select id="period"><option value="7">최근 7일</option><option value="30" selected>최근 30일</option><option value="90">최근 90일</option></select><span id="date-range"></span></div>
+        <div class="toolbar-actions"><label class="demo-switch"><input type="checkbox" id="demo-mode" /><span class="switch-track" aria-hidden="true"></span>예시 데이터 보기</label><button id="export" class="subtle-button" type="button" disabled>CSV 내보내기 ↓</button></div>
+      </div>
+      <p id="data-status" class="data-status" role="status">통계 서비스 연결을 기다리고 있습니다.</p>
+      <div class="metrics">
+        <article class="metric"><div><span>방문자</span><span class="metric-icon" aria-hidden="true">◎</span></div><strong data-metric="visitors">—</strong><small>기간 내 고유 방문자</small></article>
+        <article class="metric"><div><span>방문 횟수</span><span class="metric-icon" aria-hidden="true">↻</span></div><strong data-metric="sessions">—</strong><small>사이트 방문 세션</small></article>
+        <article class="metric"><div><span>페이지 조회</span><span class="metric-icon" aria-hidden="true">▧</span></div><strong data-metric="views">—</strong><small>콘텐츠를 본 횟수</small></article>
+        <article class="metric accent-metric"><div><span>외부 링크 클릭</span><span class="metric-icon" aria-hidden="true">↗</span></div><strong data-metric="clicks">—</strong><small>Steam · YouTube · 커뮤니티</small></article>
+      </div>
+      <div class="overview-grid">
+        <article class="panel trend-panel"><div class="panel-heading"><div><h2>방문 추이</h2><p>일별 고유 방문자</p></div><span class="chart-legend"><i></i> 방문자</span></div><div class="trend-wrap"><div class="chart-ticks" aria-hidden="true"><span data-axis-max>—</span><span data-axis-mid>—</span><span>0</span></div><div class="trend-chart" id="trend-chart" role="img" aria-label="방문 통계 미연결"><div class="empty-state"><span aria-hidden="true">⌁</span><strong>아직 방문 기록이 없습니다</strong><p>통계를 연결하면 방문 추이가 표시됩니다.</p></div></div></div><div class="chart-dates"><span data-chart-start></span><span data-chart-end></span></div></article>
+        <article class="panel"><div class="panel-heading"><div><h2>관심으로 이어진 클릭</h2><p>외부 링크 종류별 클릭 수</p></div><span class="tiny-label">OUTBOUND</span></div><div id="outbound-list" class="breakdown"></div><p class="panel-note">클릭 수는 이 사이트에서 링크를 누른 횟수입니다. Steam 위시리스트 수는 별도 지표입니다.</p></article>
+      </div>
+    </section>
+
+    <section id="games" class="dashboard-section">
+      <div class="section-heading"><div><p class="eyebrow">GAME INSIGHTS</p><h2>어떤 게임에 관심이 모일까요?</h2></div><span class="tiny-label">4 PROJECTS</span></div>
+      <article class="panel game-panel"><div class="table-scroll"><table><caption class="sr-only">게임별 섹션 조회, Steam 클릭, 트레일러 클릭 통계</caption><thead><tr><th scope="col">게임</th><th scope="col">섹션 조회</th><th scope="col">Steam 클릭</th><th scope="col">트레일러 클릭</th><th scope="col">조회 비중</th></tr></thead><tbody id="game-table"></tbody></table></div><p class="table-note">비중은 게임 소개 섹션 조회 합계를 기준으로 계산합니다. 연결된 링크가 없는 항목은 ‘해당 없음’으로 표시됩니다.</p></article>
+    </section>
+
+    <section id="audience" class="dashboard-section">
+      <div class="section-heading"><div><p class="eyebrow">AUDIENCE</p><h2>방문자는 어디에서 올까요?</h2></div></div>
+      <div class="audience-grid">
+        <article class="panel"><div class="panel-heading"><div><h3>유입 경로</h3><p>사이트에 도착한 경로</p></div></div><div id="source-list" class="breakdown"></div></article>
+        <article class="panel"><div class="panel-heading"><div><h3>사용 기기</h3><p>방문 세션 기준</p></div></div><div id="device-list" class="breakdown"></div></article>
+        <article class="panel"><div class="panel-heading"><div><h3>사이트 언어</h3><p>선택된 표시 언어</p></div></div><div id="language-list" class="breakdown"></div></article>
+      </div>
+    </section>
+
+    <section id="connections" class="dashboard-section">
+      <div class="section-heading"><div><p class="eyebrow">CONNECTIONS</p><h2>대시보드 연결 상태</h2></div></div>
+      <div class="connection-grid">
+        <article class="panel connection-card"><span class="setup-badge">연결 전</span><h3>본인 전용 로그인</h3><p>허용된 본인 계정만 관리자 화면과 통계 API에 접근하도록 인증 서비스를 연결할 자리입니다.</p><div class="connection-detail"><span>접근 대상</span><strong>지정 관리자 1명</strong></div><div class="connection-detail"><span>로그인 상태</span><strong>인증 미연결</strong></div></article>
+        <article class="panel connection-card"><span class="setup-badge">연결 전</span><h3>방문 · 클릭 통계</h3><p>방문, 게임 소개 조회, 외부 링크 클릭 데이터를 수집하고 조회할 통계 서비스 연결 자리입니다.</p><div class="connection-detail"><span>수집 상태</span><strong>수집하지 않음</strong></div><div class="connection-detail"><span>마지막 동기화</span><strong>—</strong></div></article>
+      </div>
+    </section>
+    <footer class="page-footer"><span>© <span id="year"></span> Clusion Games</span><span>STUDIO ADMIN · 구성 미리보기</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>
